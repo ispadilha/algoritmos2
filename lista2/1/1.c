@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void imprime_n_a_0(int n){
-    if(n == 0){
+    if(n < 0){
         return;
     }
 
