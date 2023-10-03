@@ -16,10 +16,10 @@ int hanoi(int n, int p1, int p2, int aux) {
         move(1, p1, p2);
         cont = 1;
     } else {
-        cont += hanoi(n - 1, p1, aux, p2);   // Mova (n-1) discos para auxiliar usando p2 como destino
+        cont += hanoi(n - 1, p1, aux, p2);   // Mova (n-1) discos de p1 para auxiliar usando p2 como "auxiliar local"
         move(n, p1, p2);                     // Mova o disco n para o destino
         cont++;                               // Incrementa o contador de movimentos
-        cont += hanoi(n - 1, aux, p2, p1);   // Mova (n-1) discos de auxiliar para destino usando p1 como auxiliar
+        cont += hanoi(n - 1, aux, p2, p1);   // Mova (n-1) discos de auxiliar para destino usando p1 como "auxiliar local"
     }
     
     return cont;
